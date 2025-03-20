@@ -6,13 +6,34 @@ console.log(numberUtente + ' ' + "Numero dell'utente")
 let numberComputer = Math.random();
 console.log(Math.floor(Math.random() * 6) + 1 + ' ' + "Numero del computer")
 
-if (numberUtente > numberComputer) {
-    console.log('L\'utente ha vinto')
+let vittoria = ['Vittoria', 'Sconfitta', 'Pareggio'];
+if (numberUtente >= 1 && numberUtente <= 6) {
+
+    if (numberUtente > Math.floor(Math.random() * 6) + 1) {
+        vittoria = 'Vittoria';
+        console.log(vittoria + ' ' + ': l\'utente ha VINTO!')
+    }
+
+    else if (numberUtente < Math.floor(Math.random() * 6) + 1) {
+        vittoria = 'Sconfitta';
+        console.log(vittoria + ' ' + ': Il computer ha VINTO!')
+    }
+    else
+    //if (numberUtente === Math.floor(Math.random() * 6) + 1)
+    {
+        vittoria = 'Pareggio';
+        console.log(vittoria);
+    }
 }
 
-else if (numberUtente < numberComputer) {
-    console.log('Il computer ha vinto')
+else {
+    console.log('ERRORE: Hai inserito un numero maggiore di 6, Ritenta!')
+}
+
+
+/*if(vittoria === 'vittoria'){
+    console.log('L\'utente ha vinto');
 }
 else{
-    console.log('Pareggio')
-}
+     console.log('Il computer ha vinto')
+}*/
